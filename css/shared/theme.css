@@ -1,0 +1,11 @@
+:root {
+    --color-prim: #901C1C;
+    --color-sec: #D3573C;
+    --text-color-prim: var(--color-sec);
+    --text-color-sec: var(--color-prim);
+    --text-color-third: #525252;
+    --bckgd-color: #FAFAFA;
+
+    --margin-lat: 0% 5%;
+
+}

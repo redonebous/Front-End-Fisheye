@@ -15,11 +15,12 @@ async function displayData(photographers) {
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
-        const userWrapper = document.createElement('div');
+        const userWrapper = document.createElement('article');
         const userCardDOM = photographerModel.getUserCardDOM();
         const userDescDOM = photographerModel.getUserDescDOM();
         userWrapper.appendChild(userCardDOM);
         userWrapper.appendChild(userDescDOM);
+        userWrapper.classList.add('flex-col');
 
         photographersSection.appendChild(userWrapper);
     });
