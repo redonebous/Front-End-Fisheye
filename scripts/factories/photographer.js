@@ -6,7 +6,7 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const card = document.createElement('a');
         card.setAttribute("href", "#");
-        card.setAttribute("aria-label", `Page photographe de ${name}, venant de ${city} ${country}. Taux journalier de ${price} par jour.`)
+        card.setAttribute("aria-label", `Page photographe de ${name}, venant de ${city} ${country}. Taux journalier de ${price} euros.`)
         card.classList.add("flex-col");
 
         const img = document.createElement('img');
