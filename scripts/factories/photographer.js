@@ -5,12 +5,13 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const card = document.createElement('a');
-        card.setAttribute("href", "#");
+        card.setAttribute("href", `/photographer.html?page=${id}`);
         card.setAttribute("aria-label", `Page photographe de ${name}, venant de ${city} ${country}. Taux journalier de ${price} euros.`)
         card.classList.add("flex-col");
 
         const img = document.createElement('img');
         img.setAttribute("src", picture);
+        img.setAttribute("alt", `Photo de ${name}`);
 
         const h2 = document.createElement('h2');
         h2.textContent = name;
