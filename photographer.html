@@ -12,9 +12,19 @@
       <a href="/index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <section class="photograph-header">
+        <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
+      </section>
+      <section class="media-galery">
+        <label for="trier-galery"> Trier par
+          <select name="trier-galery" id="trier-galery">
+            <option value="popularite">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
+          </select>
+        </label>
+        <div class="galery-section"></div>
+      </section>
     </main>
     <div id="contact_modal">
 			<div class="modal">

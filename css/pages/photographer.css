@@ -52,4 +52,32 @@
   object-fit: cover;
 }
 
+.media-galery {
+  margin: var(--margin-lat);
+  margin-top: 50px;
+}
+.media-galery .galery-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+.media-galery .galery-section a {
+  width: 100%;
+  height: 100%;
+}
+.media-galery .galery-section a img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.media-galery .galery-section a video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.media-galery .galery-section p {
+  width: 100%;
+}
+
 /*# sourceMappingURL=photographer.css.map */

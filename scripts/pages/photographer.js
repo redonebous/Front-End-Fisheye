@@ -1,6 +1,7 @@
 import { mediaFactory } from '../factories/media.js';
 import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
+import { displayModal, closeModal } from '../utils/contactForm.js';
 
 async function prepareData() {
     let media = await getMedias();
@@ -21,19 +22,20 @@ async function prepareData() {
 async function displayData({ media, photographer }) {
     const main = document.querySelector("#main");
     const header = document.querySelector('.photograph-header');
-
-    console.log(media);
-    console.log(photographer);
+    const galery = document.querySelector('.galery-section');
 
     const photographerModel = photographerFactory(photographer[0]);
     const userHeader = photographerModel.getUserHeaderDOM();
     const profilePicture = photographerModel.getPictureProfileDOM();
 
-
     header.appendChild(userHeader);
     header.appendChild(profilePicture);
 
-
+    media.forEach((media) => {
+        const galeryModel = mediaFactory(media);
+        const mediaCard = galeryModel.getMediaCardDOM();
+        galery.appendChild(mediaCard);
+    });
 
     /* medias.forEach((media) => {
         const galeryModel = mediaFactory(media);

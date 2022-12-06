@@ -1,16 +1,61 @@
 function mediaFactory(data) {
-    const { id, photographerId, title, image, likes, date, price } = data;
-
-    const picture = `assets/photographers/media/photographer_${photographerId}/${image}`;
+    const { id, photographerId, title, image, video, likes, date, price } = data;
 
     function getMediaCardDOM() {
+        const card = document.createElement('article');
+        card.setAttribute("aria-label", `#`)
+        card.classList.add("flex-col");
+        // Fontcion de check de la valeur de picture
+        const content = getContent();
 
-        return (0);
+        const description = document.createElement('p');
+        description.classList.add('flex-header');
+
+        const titre = document.createElement('span');
+        titre.textContent = title;
+
+        const like = document.createElement('span');
+        const icon = document.createElement('i');
+
+        like.textContent = likes;
+        like.appendChild(icon);
+        description.appendChild(titre);
+        description.appendChild(like);
+
+        card.appendChild(content);
+        card.appendChild(description);
+
+        return (card);
     }
 
     function getMediaDescDOM() {
 
         return (0);
+    }
+
+    function getContent() {
+
+        let content;
+        let path;
+
+        if ('image' in data) {
+            path = `assets/photographers/media/photographer_${photographerId}/${image}`
+            content = document.createElement('img');
+
+        } else {
+            path = `assets/photographers/media/photographer_${photographerId}/${video}`;
+            content = document.createElement('video');
+
+        }
+        content.setAttribute("src", path);
+        content.setAttribute("alt", `#`);
+
+        let wrapper = document.createElement('a');
+        wrapper.setAttribute('href', "#");
+        wrapper.appendChild(content)
+
+
+        return (wrapper);
     }
 
 
