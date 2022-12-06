@@ -1,11 +1,47 @@
 @import url('/css/pages/components/modalContact.css');
 
 .photograph-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: var(--margin-lat);
+    padding: var(--margin-lat);
+
+    div {
+
+        align-items: flex-start;
+        gap: 10px;
+
+        h1 {
+            color: var(--text-color-prim);
+            font-size: 36px;
+        }
+
+        p {
+            align-items: flex-start;
+            gap: 5px;
+
+            :nth-child(1) {
+                color: var(--text-color-sec);
+                font-size: 20px;
+            }
+
+            :nth-child(2) {
+                color: var(--text-color-third);
+                font-size: 16px;
+            }
+        }
+
+    }
 
     .contact_button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
         font-size: 20px;
         font-weight: bold;
         color: white;
@@ -16,5 +52,12 @@
         background-color: #901C1C;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    img {
+        height: 180px;
+        width: 180px;
+        border-radius: 180px;
+        object-fit: cover;
     }
 }
