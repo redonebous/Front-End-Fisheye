@@ -1,7 +1,7 @@
 import { mediaFactory } from '../factories/media.js';
 import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
-import { displayModal, closeModal } from '../utils/contactForm.js';
+import { setDisplayModal } from '../utils/contactForm.js';
 
 async function prepareData() {
     let media = await getMedias();
@@ -13,23 +13,36 @@ async function prepareData() {
     media = media['media'].filter(media => media.photographerId == userId);
     photographer = photographer['photographers'].filter(user => user.id == userId);
 
-    const data = { media, photographer };
+    let totalLike = 0;
+
+    media.forEach(media => totalLike += media.likes);
+
+    const data = { media, photographer, totalLike };
 
     return data;
 }
 
 
-async function displayData({ media, photographer }) {
+async function displayData({ media, photographer, totalLike }) {
     const main = document.querySelector("#main");
     const header = document.querySelector('.photograph-header');
     const galery = document.querySelector('.galery-section');
+    const modal = document.querySelector('.modal');
+    const modalHeader = document.querySelector('.modal-header');
 
     const photographerModel = photographerFactory(photographer[0]);
+
     const userHeader = photographerModel.getUserHeaderDOM();
     const profilePicture = photographerModel.getPictureProfileDOM();
+    const infoUser = photographerModel.getUserAnalytics(totalLike);
+    const titleModal = photographerModel.getHeaderContactForm();
+    const contactFrom = photographerModel.getContactForm();
+
 
     header.appendChild(userHeader);
     header.appendChild(profilePicture);
+    modalHeader.appendChild(titleModal);
+    modal.appendChild(contactFrom);
 
     media.forEach((media) => {
         const galeryModel = mediaFactory(media);
@@ -37,11 +50,10 @@ async function displayData({ media, photographer }) {
         galery.appendChild(mediaCard);
     });
 
-    /* medias.forEach((media) => {
-        const galeryModel = mediaFactory(media);
-        const photographerModel = photographerFactory(photopgrapher);
-        main.appendChild();
-    }); */
+    main.appendChild(infoUser);
+
+    setDisplayModal();
+
 };
 
 async function init() {

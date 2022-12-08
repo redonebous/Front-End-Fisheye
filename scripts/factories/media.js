@@ -16,8 +16,9 @@ function mediaFactory(data) {
 
         const like = document.createElement('span');
         const icon = document.createElement('i');
+        icon.classList.add('fa-solid', 'fa-heart');
 
-        like.textContent = likes;
+        like.textContent = likes + ' ';
         like.appendChild(icon);
         description.appendChild(titre);
         description.appendChild(like);

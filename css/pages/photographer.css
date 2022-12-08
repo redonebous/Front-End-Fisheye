@@ -1,4 +1,8 @@
 @import url("/css/pages/components/modalContact.css");
+main {
+  position: relative;
+}
+
 .photograph-header {
   position: relative;
   display: flex;
@@ -41,9 +45,13 @@
   width: 170px;
   height: 70px;
   border: none;
-  background-color: #901C1C;
+  background-color: var(--color-prim);
   border-radius: 5px;
   cursor: pointer;
+}
+.photograph-header .contact_button:hover, .photograph-header .contact_button:focus {
+  background-color: var(--color-sec);
+  color: black;
 }
 .photograph-header img {
   height: 180px;
@@ -55,6 +63,19 @@
 .media-galery {
   margin: var(--margin-lat);
   margin-top: 50px;
+  margin-bottom: 100px;
+}
+.media-galery label select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--color-prim);
+  color: white;
+  border: none;
+  margin-left: 25px;
+}
+.media-galery label select:hover, .media-galery label select:focus {
+  outline: none;
 }
 .media-galery .galery-section {
   display: grid;
@@ -69,15 +90,31 @@
 .media-galery .galery-section a img {
   width: 100%;
   height: 300px;
+  border-radius: 5px;
   object-fit: cover;
 }
 .media-galery .galery-section a video {
   width: 100%;
   height: 300px;
+  border-radius: 5px;
   object-fit: cover;
 }
 .media-galery .galery-section p {
   width: 100%;
+  color: var(--text-color-sec);
+}
+
+.userInfo {
+  height: 50px;
+  width: 20%;
+  position: fixed;
+  bottom: 0px;
+  right: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-third);
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=photographer.css.map */

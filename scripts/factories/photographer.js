@@ -59,7 +59,7 @@ function photographerFactory(data) {
         description.appendChild(localisation);
         description.appendChild(devise);
         userHeader.appendChild(title);
-        userHeader.appendChild(description)
+        userHeader.appendChild(description);
 
         return (userHeader);
     }
@@ -72,8 +72,64 @@ function photographerFactory(data) {
         return (img);
     }
 
+    function getUserAnalytics(likes = 0) {
+        const p = document.createElement('p');
+        p.classList.add('userInfo');
 
-    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM }
+        const tarif = document.createElement('span');
+        tarif.textContent = price + '€ / jours';
+
+        const like = document.createElement('span');
+        like.textContent = likes + ' ';
+
+        const icon = document.createElement('i');
+        icon.classList.add('fa-solid', 'fa-heart');
+
+        like.appendChild(icon);
+        p.appendChild(like);
+        p.appendChild(tarif);
+
+        return (p);
+    }
+
+    function getHeaderContactForm() {
+        const h2 = document.createElement('h2');
+        h2.innerHTML = `<h2>Contactez-moi<br>${name}</h2>`;
+        return h2;
+    }
+
+    function getContactForm() { // ajouter la notion de class afin qu'ils soit ciblable et checkable par l'util contactForm
+
+        const form = document.createElement('form');
+        let list = ['Prénom', 'Nom', 'Email', 'Votre Message'];
+        list.forEach((name) => {
+            let label = document.createElement('label');
+            label.textContent = name;
+            if (name == list[3]) {
+                let input = document.createElement('textarea');
+                label.appendChild(input);
+            } else {
+                let input = document.createElement('input');
+                if (name == list[0] || name == list[1]) input.setAttribute('type', 'text')
+                if (name == list[2]) input.setAttribute('type', 'email');
+                label.appendChild(input);
+            }
+            form.appendChild(label);
+        });
+
+        const button = document.createElement('button');
+        button.innerText = 'Envoyer';
+        button.setAttribute('type', 'submit');
+        button.classList.add('contact_button', 'sub-btn');
+
+        form.appendChild(button);
+
+        return (form);
+
+    }
+
+
+    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM, getUserAnalytics, getContactForm, getHeaderContactForm }
 }
 
 export { photographerFactory };

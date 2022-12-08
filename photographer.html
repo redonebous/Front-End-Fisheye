@@ -4,6 +4,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://kit.fontawesome.com/5776ca0d34.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
@@ -13,7 +14,7 @@
     </header>
     <main id="main">
       <section class="photograph-header">
-        <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
+        <button class="contact_button" aria-label="Contact Me">Contactez-moi</button>
       </section>
       <section class="media-galery">
         <label for="trier-galery"> Trier par
@@ -26,19 +27,11 @@
         <div class="galery-section"></div>
       </section>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" class="flex-centre">
 			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+				<header class="modal-header">
+          <img class="sub-btn-close" src="assets/icons/close.svg" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
 			</div>
 		</div>
     <script type="module" src="/scripts/pages/photographer.js"></script>

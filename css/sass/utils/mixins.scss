@@ -1,0 +1,18 @@
+@mixin button-contact {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: var(--color-prim);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: var(--color-sec);
+        color: black;
+    }
+}
