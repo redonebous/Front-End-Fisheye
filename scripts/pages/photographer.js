@@ -1,7 +1,7 @@
 import { mediaFactory } from '../factories/media.js';
 import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
-import { setDisplayModal } from '../utils/contactForm.js';
+import { contactModal } from '../utils/contactForm.js';
 
 async function prepareData() {
     let media = await getMedias();
@@ -36,13 +36,13 @@ async function displayData({ media, photographer, totalLike }) {
     const profilePicture = photographerModel.getPictureProfileDOM();
     const infoUser = photographerModel.getUserAnalytics(totalLike);
     const titleModal = photographerModel.getHeaderContactForm();
-    const contactFrom = photographerModel.getContactForm();
+    const contactForm = photographerModel.getContactForm();
 
 
     header.appendChild(userHeader);
     header.appendChild(profilePicture);
     modalHeader.appendChild(titleModal);
-    modal.appendChild(contactFrom);
+    modal.appendChild(contactForm);
 
     media.forEach((media) => {
         const galeryModel = mediaFactory(media);
@@ -52,7 +52,8 @@ async function displayData({ media, photographer, totalLike }) {
 
     main.appendChild(infoUser);
 
-    setDisplayModal();
+    const contactFormUtil = contactModal();
+    contactFormUtil.setEventModal();
 
 };
 

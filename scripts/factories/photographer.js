@@ -101,21 +101,36 @@ function photographerFactory(data) {
     function getContactForm() { // ajouter la notion de class afin qu'ils soit ciblable et checkable par l'util contactForm
 
         const form = document.createElement('form');
-        let list = ['Prénom', 'Nom', 'Email', 'Votre Message'];
-        list.forEach((name) => {
+        form.setAttribute('novalidate', '');
+        form.classList.add('formContact');
+
+        let contact = {
+            prenom: 'Prénom',
+            nom: 'Nom',
+            email: 'Email',
+            message: 'Votre Message'
+        };
+
+        for (let item in contact) {
             let label = document.createElement('label');
-            label.textContent = name;
-            if (name == list[3]) {
+            label.textContent = contact[item];
+
+            if (item == 'message') {
                 let input = document.createElement('textarea');
+                input.setAttribute('name', item);
+                input.classList.add(`input-${item}`);
                 label.appendChild(input);
             } else {
                 let input = document.createElement('input');
-                if (name == list[0] || name == list[1]) input.setAttribute('type', 'text')
-                if (name == list[2]) input.setAttribute('type', 'email');
+                if (item != 'email') input.setAttribute('type', 'text');
+                if (item == 'email') input.setAttribute('type', 'email');
+                input.setAttribute('name', item);
+                input.classList.add(`input-${item}`);
                 label.appendChild(input);
             }
             form.appendChild(label);
-        });
+
+        }
 
         const button = document.createElement('button');
         button.innerText = 'Envoyer';
