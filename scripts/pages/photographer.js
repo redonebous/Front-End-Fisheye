@@ -3,6 +3,8 @@ import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
 import { contactModal } from '../utils/contactForm.js';
 
+let state = {};
+
 async function prepareData() {
     let media = await getMedias();
     let photographer = await getPhotographers();
@@ -10,31 +12,35 @@ async function prepareData() {
     let params = new URLSearchParams(window.location.search);
     let userId = params.get('page');
 
-    media = media['media'].filter(media => media.photographerId == userId);
+
+    state.media = media['media'].filter(media => media.photographerId == userId);
     photographer = photographer['photographers'].filter(user => user.id == userId);
+    state.photographer = photographer[0];
 
-    let totalLike = 0;
+    state.totalLike = 0;
 
-    media.forEach(media => totalLike += media.likes);
+    state.media.forEach(media => state.totalLike += media.likes);
 
-    const data = { media, photographer, totalLike };
+    /* const data = { media, photographer, totalLike };
 
-    return data;
+    return data; */
 }
 
 
-async function displayData({ media, photographer, totalLike }) {
+async function displayData() {
     const main = document.querySelector("#main");
     const header = document.querySelector('.photograph-header');
     const galery = document.querySelector('.galery-section');
     const modal = document.querySelector('.modal');
     const modalHeader = document.querySelector('.modal-header');
+    console.log(state);
+    console.log(state.photographer);
 
-    const photographerModel = photographerFactory(photographer[0]);
+    const photographerModel = photographerFactory(state);
 
     const userHeader = photographerModel.getUserHeaderDOM();
     const profilePicture = photographerModel.getPictureProfileDOM();
-    const infoUser = photographerModel.getUserAnalytics(totalLike);
+    const infoUser = photographerModel.getUserAnalytics(state.totalLike);
     const titleModal = photographerModel.getHeaderContactForm();
     const contactForm = photographerModel.getContactForm();
 
@@ -44,7 +50,7 @@ async function displayData({ media, photographer, totalLike }) {
     modalHeader.appendChild(titleModal);
     modal.appendChild(contactForm);
 
-    media.forEach((media) => {
+    state.media.forEach((media) => {
         const galeryModel = mediaFactory(media);
         const mediaCard = galeryModel.getMediaCardDOM();
         galery.appendChild(mediaCard);
@@ -59,8 +65,8 @@ async function displayData({ media, photographer, totalLike }) {
 
 async function init() {
     // Récupère les datas utiles à la page 
-    const data = await prepareData();
-    displayData(data);
+    await prepareData();
+    await displayData();
 };
 
 init();

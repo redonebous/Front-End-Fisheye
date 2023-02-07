@@ -67,7 +67,7 @@ main {
 }
 .media-galery label select {
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   background-color: var(--color-prim);
   color: white;

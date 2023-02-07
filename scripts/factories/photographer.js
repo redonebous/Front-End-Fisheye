@@ -1,5 +1,7 @@
 function photographerFactory(data) {
-    const { id, name, portrait, city, country, tagline, price } = data;
+    console.log(data);
+    const { id, name, portrait, city, country, tagline, price } = data.photographer;
+    const totalLike = data.totalLike;
 
     const picture = `assets/photographers/portrait/${portrait}`;
 
