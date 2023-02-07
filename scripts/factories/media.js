@@ -14,7 +14,7 @@ function mediaFactory(data) {
         const titre = document.createElement('span');
         titre.textContent = title;
 
-        const like = document.createElement('span');
+        const like = document.createElement('button');
         const icon = document.createElement('i');
         icon.classList.add('fa-solid', 'fa-heart');
 
@@ -29,10 +29,6 @@ function mediaFactory(data) {
         return (card);
     }
 
-    function getMediaDescDOM() {
-
-        return (0);
-    }
 
     function getContent() {
 
@@ -60,7 +56,7 @@ function mediaFactory(data) {
     }
 
 
-    return { getMediaCardDOM, getMediaDescDOM }
+    return { getMediaCardDOM }
 }
 
 export { mediaFactory };

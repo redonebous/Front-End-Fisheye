@@ -113,6 +113,12 @@ main {
             width: 100%;
             color: var(--text-color-sec);
 
+            button {
+                border: none;
+                background-color: white;
+                color: var(--text-color-sec);
+                cursor: pointer;
+            }
         }
 
     }

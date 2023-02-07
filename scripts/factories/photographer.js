@@ -100,7 +100,7 @@ function photographerFactory(data) {
         return h2;
     }
 
-    function getContactForm() { // ajouter la notion de class afin qu'ils soit ciblable et checkable par l'util contactForm
+    function getContactForm() {
 
         const form = document.createElement('form');
         form.setAttribute('novalidate', '');
