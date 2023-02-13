@@ -1,17 +1,37 @@
 function photographerFactory(data) {
-    console.log(data);
-    const { id, name, portrait, city, country, tagline, price } = data.photographer;
+
+    if (data.photographer) {
+        const { id, name, portrait, city, country, tagline, price } = data.photographer;
+        const picture = `assets/photographers/portrait/${portrait}`;
+    }
+
     const totalLike = data.totalLike;
+    const userList = data.userList;
 
-    const picture = `assets/photographers/portrait/${portrait}`;
+    function getGaleryPhotographers() {
+        const wrapper = document.createElement('div');
+        console.log(userList);
+        userList.forEach((photographer) => {
+            const userWrapper = document.createElement('article');
+            const userCardDOM = getUserCardDOM(photographer);
+            const userDescDOM = getUserDescDOM(photographer);
+            userWrapper.appendChild(userCardDOM);
+            userWrapper.appendChild(userDescDOM);
+            userWrapper.classList.add('flex-col');
+            wrapper.appendChild(userWrapper);
+        });
 
-    function getUserCardDOM() {
+        return wrapper;
+
+    }
+
+    function getUserCardDOM({ id, name, city, country, price, portrait }) {
         const card = document.createElement('a');
         card.setAttribute("href", `/photographer.html?page=${id}`);
         card.setAttribute("aria-label", `Page photographe de ${name}, venant de ${city} ${country}. Taux journalier de ${price} euros.`)
         card.classList.add("flex-col");
 
-        const img = getPictureProfileDOM();
+        const img = getPictureProfileDOM({ portrait, name });
 
         const h2 = document.createElement('h2');
         h2.textContent = name;
@@ -21,7 +41,7 @@ function photographerFactory(data) {
         return (card);
     }
 
-    function getUserDescDOM() {
+    function getUserDescDOM({ city, country, price, tagline }) {
         const description = document.createElement('p');
         description.classList.add('flex-col');
 
@@ -40,7 +60,7 @@ function photographerFactory(data) {
         return (description);
     }
 
-    function getUserHeaderDOM() {
+    function getUserHeaderDOM({ name, city, country, tagline }) {
 
         const userHeader = document.createElement('div');
         userHeader.classList.add('flex-col');
@@ -66,7 +86,8 @@ function photographerFactory(data) {
         return (userHeader);
     }
 
-    function getPictureProfileDOM() {
+    function getPictureProfileDOM({ portrait, name }) {
+        const picture = `assets/photographers/portrait/${portrait}`;
         const img = document.createElement('img');
         img.setAttribute("src", picture);
         img.setAttribute("alt", `Photo de ${name}`);
@@ -74,7 +95,7 @@ function photographerFactory(data) {
         return (img);
     }
 
-    function getUserAnalytics(likes = 0) {
+    function getUserAnalytics({ price }, likes) {
         const p = document.createElement('p');
         p.classList.add('userInfo');
 
@@ -146,7 +167,7 @@ function photographerFactory(data) {
     }
 
 
-    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM, getUserAnalytics, getContactForm, getHeaderContactForm }
+    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM, getUserAnalytics, getContactForm, getHeaderContactForm, getGaleryPhotographers }
 }
 
 export { photographerFactory };

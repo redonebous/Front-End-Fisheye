@@ -21,9 +21,6 @@ async function prepareData() {
 
     state.media.forEach(media => state.totalLike += media.likes);
 
-    /* const data = { media, photographer, totalLike };
-
-    return data; */
 }
 
 
@@ -33,14 +30,12 @@ async function displayData() {
     const galery = document.querySelector('.galery-section');
     const modal = document.querySelector('.modal');
     const modalHeader = document.querySelector('.modal-header');
-    console.log(state);
-    console.log(state.photographer);
 
     const photographerModel = photographerFactory(state);
 
-    const userHeader = photographerModel.getUserHeaderDOM();
-    const profilePicture = photographerModel.getPictureProfileDOM();
-    const infoUser = photographerModel.getUserAnalytics(state.totalLike);
+    const userHeader = photographerModel.getUserHeaderDOM(state.photographer);
+    const profilePicture = photographerModel.getPictureProfileDOM(state.photographer);
+    const infoUser = photographerModel.getUserAnalytics(state.photographer, state.totalLike);
     const titleModal = photographerModel.getHeaderContactForm();
     const contactForm = photographerModel.getContactForm();
 

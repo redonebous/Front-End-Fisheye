@@ -1,6 +1,7 @@
 @import url('/css/pages/components/header.css');
 
-.photographer_section {
+.photographer_section div {
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
