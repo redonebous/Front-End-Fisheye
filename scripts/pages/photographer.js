@@ -2,6 +2,7 @@ import { mediaFactory } from '../factories/media.js';
 import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
 import { contactModal } from '../utils/contactForm.js';
+import { mediaEvent } from '../utils/mediaEvent.js';
 
 let state = {};
 
@@ -55,6 +56,9 @@ async function displayData() {
 
     const contactFormUtil = contactModal();
     contactFormUtil.setEventModal();
+
+    const mediaUtil = mediaEvent();
+    mediaUtil.setLikeEvent(state);
 
 };
 

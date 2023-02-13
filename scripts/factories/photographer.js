@@ -103,6 +103,7 @@ function photographerFactory(data) {
         tarif.textContent = price + '€ / jours';
 
         const like = document.createElement('span');
+        like.classList.add("likeCount");
         like.textContent = likes + ' ';
 
         const icon = document.createElement('i');

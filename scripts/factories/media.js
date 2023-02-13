@@ -5,7 +5,7 @@ function mediaFactory(data) {
         const card = document.createElement('article');
         card.setAttribute("aria-label", `#`)
         card.classList.add("flex-col");
-        // Fontcion de check de la valeur de picture
+
         const content = getContent();
 
         const description = document.createElement('p');
@@ -15,6 +15,8 @@ function mediaFactory(data) {
         titre.textContent = title;
 
         const like = document.createElement('button');
+        like.setAttribute("id", `like-${id}`);
+        like.classList.add("btn-like");
         const icon = document.createElement('i');
         icon.classList.add('fa-solid', 'fa-heart');
 
@@ -25,6 +27,7 @@ function mediaFactory(data) {
 
         card.appendChild(content);
         card.appendChild(description);
+
 
         return (card);
     }
