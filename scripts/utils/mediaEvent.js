@@ -22,8 +22,19 @@ function mediaEvent() {
                     found.isLiked = true;
                     state.totalLike = state.totalLike + 1;
                 }
-                console.log(found.likes);
-                console.log(state.totalLike);
+
+                // Modifier l'affichage du btn like + totalLike dans userInfo
+                const icon = document.createElement('i');
+                const icon2 = document.createElement('i');
+
+                icon.classList.add('fa-solid', 'fa-heart');
+                icon2.classList.add('fa-solid', 'fa-heart');
+
+                elem.textContent = found.likes + ' ';
+                likeCount.textContent = state.totalLike + ' ';
+                elem.appendChild(icon);
+                likeCount.appendChild(icon2);
+
             })
         })
 
