@@ -49,10 +49,10 @@ function mediaFactory(data) {
         }
         content.setAttribute("src", path);
         content.setAttribute("alt", `#`);
-        content.setAttribute("id", `content-${id}`);
-        content.classList.add("media-content");
 
         let wrapper = document.createElement('a');
+        wrapper.setAttribute("id", `content-${id}`);
+        wrapper.classList.add("media-content");
         wrapper.setAttribute('href', "#");
         wrapper.appendChild(content)
 

@@ -1,4 +1,24 @@
 // LikeEvent + SortEvent
+
+/* 
+    - Mettre en place le style 
+    - Recuperer l'index avec findIndex 
+    - btn prev => findIndex
+    - if (index == 0) revenir au dernier et inverement 
+
+    - AddEvent change sur select 
+    - switch avec les case popu / date / titre 
+    - sort dans chacun des case sur state.media 
+    - vider galery section avec innerHTML = ""
+    - relancer getMediaCardDOM
+    - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) 
+
+    - Sortir le getContactForm du JS et le coder en HTML 
+    - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
+
+    - Faire un tour de la maquette et ajouter les attributs d'accessibilités
+    - Ajouter le focus sur les elem de la modal contact 
+*/
 // EventListener in photographer's page
 
 function mediaEvent() {
@@ -30,8 +50,8 @@ function mediaEvent() {
                 icon.classList.add('fa-solid', 'fa-heart');
                 icon2.classList.add('fa-solid', 'fa-heart');
 
-                elem.textContent = found.likes + ' ';
-                likeCount.textContent = state.totalLike + ' ';
+                elem.innerText = found.likes + ' ';
+                likeCount.innerText = state.totalLike + ' ';
                 elem.appendChild(icon);
                 likeCount.appendChild(icon2);
 
