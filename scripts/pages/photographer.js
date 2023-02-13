@@ -3,6 +3,7 @@ import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers, getMedias } from '../utils/dataProvider.js';
 import { contactModal } from '../utils/contactForm.js';
 import { mediaEvent } from '../utils/mediaEvent.js';
+import { galeryModal } from '../utils/galeryModal.js';
 
 let state = {};
 
@@ -37,7 +38,7 @@ async function displayData() {
     const userHeader = photographerModel.getUserHeaderDOM(state.photographer);
     const profilePicture = photographerModel.getPictureProfileDOM(state.photographer);
     const infoUser = photographerModel.getUserAnalytics(state.photographer, state.totalLike);
-    const titleModal = photographerModel.getHeaderContactForm();
+    const titleModal = photographerModel.getHeaderContactForm(state.photographer);
     const contactForm = photographerModel.getContactForm();
 
 
@@ -54,11 +55,17 @@ async function displayData() {
 
     main.appendChild(infoUser);
 
+
+    // Set Event photographer's page
+
     const contactFormUtil = contactModal();
     contactFormUtil.setEventModal();
 
     const mediaUtil = mediaEvent();
     mediaUtil.setLikeEvent(state);
+
+    const ligthbox = galeryModal();
+    ligthbox.setLightBox(state);
 
 };
 

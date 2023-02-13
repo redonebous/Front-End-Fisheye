@@ -136,3 +136,14 @@ main {
     background-color: var(--color-third);
     border-radius: 5px;
 }
+
+#ligthbox {
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+
+
+}

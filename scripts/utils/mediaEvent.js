@@ -1,5 +1,5 @@
 // LikeEvent + SortEvent
-// EventListener in photographers page
+// EventListener in photographer's page
 
 function mediaEvent() {
     function setLikeEvent(state) {

@@ -10,7 +10,6 @@ function photographerFactory(data) {
 
     function getGaleryPhotographers() {
         const wrapper = document.createElement('div');
-        console.log(userList);
         userList.forEach((photographer) => {
             const userWrapper = document.createElement('article');
             const userCardDOM = getUserCardDOM(photographer);
@@ -116,7 +115,7 @@ function photographerFactory(data) {
         return (p);
     }
 
-    function getHeaderContactForm() {
+    function getHeaderContactForm({ name }) {
         const h2 = document.createElement('h2');
         h2.innerHTML = `<h2>Contactez-moi<br>${name}</h2>`;
         return h2;

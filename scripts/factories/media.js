@@ -6,7 +6,7 @@ function mediaFactory(data) {
         card.setAttribute("aria-label", `#`)
         card.classList.add("flex-col");
 
-        const content = getContent();
+        const content = getContent(data);
 
         const description = document.createElement('p');
         description.classList.add('flex-header');
@@ -33,7 +33,7 @@ function mediaFactory(data) {
     }
 
 
-    function getContent() {
+    function getContent({ image, video, id, photographerId }) {
 
         let content;
         let path;
@@ -49,6 +49,8 @@ function mediaFactory(data) {
         }
         content.setAttribute("src", path);
         content.setAttribute("alt", `#`);
+        content.setAttribute("id", `content-${id}`);
+        content.classList.add("media-content");
 
         let wrapper = document.createElement('a');
         wrapper.setAttribute('href', "#");
@@ -59,7 +61,7 @@ function mediaFactory(data) {
     }
 
 
-    return { getMediaCardDOM }
+    return { getMediaCardDOM, getContent }
 }
 
 export { mediaFactory };
