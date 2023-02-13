@@ -1,7 +1,7 @@
 // LikeEvent + SortEvent
 
 /* 
-    - Mettre en place le style 
+    - Mettre en place le style - OK
     - Recuperer l'index avec findIndex 
     - btn prev => findIndex
     - if (index == 0) revenir au dernier et inverement 
@@ -17,7 +17,7 @@
     - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
 
     - Faire un tour de la maquette et ajouter les attributs d'accessibilités
-    - Ajouter le focus sur les elem de la modal contact 
+    - Ajouter le focus sur les elem de la modal contact + Ligthbox
 */
 // EventListener in photographer's page
 

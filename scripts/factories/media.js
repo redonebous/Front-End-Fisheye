@@ -55,6 +55,7 @@ function mediaFactory(data) {
         }
         content.setAttribute("src", path);
         content.setAttribute("alt", `#`);
+        content.classList.add("content");
 
 
         return (content);

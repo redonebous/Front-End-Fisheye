@@ -1,0 +1,54 @@
+#ligthbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.2);
+}
+#ligthbox .content-lightbox {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+}
+#ligthbox .content-lightbox .content {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+#ligthbox .close-ligthbox {
+  position: absolute;
+  top: 15%;
+  left: 75%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+#ligthbox .close-ligthbox i {
+  font-size: 50px;
+  color: var(--color-prim);
+}
+#ligthbox .btn-prev {
+  margin-right: 20px;
+}
+#ligthbox .btn-prev::after {
+  content: "<";
+  font-size: 100px;
+  color: var(--color-prim);
+}
+#ligthbox .btn-post {
+  margin-left: 20px;
+}
+#ligthbox .btn-post::after {
+  content: ">";
+  font-size: 100px;
+  color: var(--color-prim);
+}
+#ligthbox .ligth-desc {
+  color: var(--color-prim);
+}
+
+/*# sourceMappingURL=ligthboxModal.css.map */
