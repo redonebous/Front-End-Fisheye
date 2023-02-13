@@ -10,9 +10,10 @@ function galeryModal() {
         const ligthbox = document.querySelector("#ligthbox");
         const body = document.querySelector("body");
         const contentBox = document.querySelector(".content-lightbox");
+        const close = document.querySelector(".close-ligthbox");
         contents.map(elem => {
             elem.addEventListener('click', () => {
-                ligthbox.style.display = "block";
+                ligthbox.style.display = "flex";
                 body.style.overflow = "hidden";
                 let contentId = elem.id;
                 contentId = contentId.split('-');
@@ -25,7 +26,14 @@ function galeryModal() {
 
                 console.log(found);
             })
-        })
+        });
+
+        close.addEventListener('click', () => {
+            ligthbox.style.display = "none";
+            body.style.overflow = "unset";
+            contentBox.innerHTML = "";
+
+        });
 
     }
 

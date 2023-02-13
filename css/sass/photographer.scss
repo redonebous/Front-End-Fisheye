@@ -143,9 +143,36 @@ main {
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: gray;
+    justify-content: center;
+    align-items: center;
+
+    .content-lightbox {
+        display: flex;
+        height: 500px;
+        width: 500px;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .close-ligthbox {
+        position: absolute;
+        top: 15%;
+        left: 75%;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+
+        i {
+            font-size: 50px;
+            color: var(--color-prim);
+        }
 
 
+    }
 
 
 }

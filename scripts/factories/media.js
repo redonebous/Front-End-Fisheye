@@ -6,7 +6,13 @@ function mediaFactory(data) {
         card.setAttribute("aria-label", `#`)
         card.classList.add("flex-col");
 
-        const content = getContent(data);
+        const img = getContent(data)
+
+        const content = document.createElement('a');
+        content.setAttribute("id", `content-${id}`);
+        content.classList.add("media-content");
+        content.setAttribute('href', "#");
+        content.appendChild(img)
 
         const description = document.createElement('p');
         description.classList.add('flex-header');
@@ -50,14 +56,8 @@ function mediaFactory(data) {
         content.setAttribute("src", path);
         content.setAttribute("alt", `#`);
 
-        let wrapper = document.createElement('a');
-        wrapper.setAttribute("id", `content-${id}`);
-        wrapper.classList.add("media-content");
-        wrapper.setAttribute('href', "#");
-        wrapper.appendChild(content)
 
-
-        return (wrapper);
+        return (content);
     }
 
 
