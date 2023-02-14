@@ -62,7 +62,7 @@ async function displayData() {
     contactFormUtil.setEventModal();
 
     const mediaUtil = mediaEvent();
-    mediaUtil.setLikeEvent(state);
+    mediaUtil.setMediaEvent(state);
 
     const ligthbox = galeryModal();
     ligthbox.setLightBox(state);

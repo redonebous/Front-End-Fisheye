@@ -1,10 +1,13 @@
+import { mediaFactory } from "../factories/media.js";
+import { galeryModal } from "./galeryModal.js";
+
 // LikeEvent + SortEvent
 
 /* 
     - Mettre en place le style - OK
-    - Recuperer l'index avec findIndex 
-    - btn prev => findIndex
-    - if (index == 0) revenir au dernier et inverement 
+    - Recuperer l'index avec findIndex - OK
+    - btn prev => findIndex - OK
+    - if (index == 0) revenir au dernier et inverement - OK
 
     - AddEvent change sur select 
     - switch avec les case popu / date / titre 
@@ -22,6 +25,12 @@
 // EventListener in photographer's page
 
 function mediaEvent() {
+
+    function setMediaEvent(state) {
+        setLikeEvent(state);
+        setSortEvent(state);
+    }
+
     function setLikeEvent(state) {
         let btnLike = document.querySelectorAll(".btn-like");
         btnLike = Array.from(btnLike);
@@ -56,11 +65,44 @@ function mediaEvent() {
                 likeCount.appendChild(icon2);
 
             })
-        })
-
+        });
     }
 
-    return { setLikeEvent };
+    function setSortEvent(state) {
+        const tri = document.querySelector("#trier-galery");
+        const galery = document.querySelector(".galery-section");
+        const lightbox = galeryModal();
+        tri.addEventListener("change", () => {
+            galery.innerHTML = "";
+            switch (tri.value) {
+                case 'popularite':
+                    state.media.sort((a, b) => b.likes - a.likes);
+                    break;
+
+                case 'titre':
+                    console.log(state.media);
+                    state.media.sort((a, b) => a.title.localeCompare(b.title));
+                    console.log(state.media);
+                    break;
+
+                case 'date':
+                    state.media.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+
+                default:
+                    break;
+            }
+            state.media.forEach(elem => {
+                const mediaModel = mediaFactory(elem);
+                const card = mediaModel.getMediaCardDOM();
+                galery.appendChild(card);
+            });
+            setLikeEvent(state);
+            lightbox.setLightBox(state);
+        });
+    }
+
+    return { setLikeEvent, setSortEvent, setMediaEvent };
 }
 
 

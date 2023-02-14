@@ -62,7 +62,6 @@ function galeryModal() {
     }
 
     function changeContent(content) {
-        console.log(content.title);
         const mediaModel = mediaFactory(content);
         let img = mediaModel.getContent(content);
         contentBox.appendChild(img);
