@@ -11,8 +11,8 @@
     .content-lightbox {
         display: flex;
         flex-direction: column;
-        height: 500px;
-        width: 500px;
+        height: 600px;
+        width: 600px;
 
         .content {
             object-fit: cover;
@@ -23,8 +23,8 @@
 
     .close-ligthbox {
         position: absolute;
-        top: 15%;
-        left: 75%;
+        top: 10%;
+        left: 73%;
         cursor: pointer;
         border: none;
         background-color: transparent;
