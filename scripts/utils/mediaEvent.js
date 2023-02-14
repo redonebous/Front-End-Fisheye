@@ -9,12 +9,12 @@ import { galeryModal } from "./galeryModal.js";
     - btn prev => findIndex - OK
     - if (index == 0) revenir au dernier et inverement - OK
 
-    - AddEvent change sur select 
-    - switch avec les case popu / date / titre 
-    - sort dans chacun des case sur state.media 
-    - vider galery section avec innerHTML = ""
-    - relancer getMediaCardDOM
-    - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) 
+    - AddEvent change sur select - OK
+    - switch avec les case popu / date / titre - OK
+    - sort dans chacun des case sur state.media - OK
+    - vider galery section avec innerHTML = "" - OK
+    - relancer getMediaCardDOM - OK
+    - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) - OK
 
     - Sortir le getContactForm du JS et le coder en HTML 
     - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
@@ -93,8 +93,8 @@ function mediaEvent() {
                     break;
             }
             state.media.forEach(elem => {
-                const mediaModel = mediaFactory(elem);
-                const card = mediaModel.getMediaCardDOM();
+                const mediaModel = mediaFactory();
+                const card = mediaModel.getMediaCardDOM(elem);
                 galery.appendChild(card);
             });
             setLikeEvent(state);

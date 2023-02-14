@@ -48,8 +48,8 @@ async function displayData() {
     modal.appendChild(contactForm);
 
     state.media.forEach((media) => {
-        const galeryModel = mediaFactory(media);
-        const mediaCard = galeryModel.getMediaCardDOM();
+        const galeryModel = mediaFactory();
+        const mediaCard = galeryModel.getMediaCardDOM(media);
         galery.appendChild(mediaCard);
     });
 

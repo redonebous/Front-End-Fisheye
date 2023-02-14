@@ -27,6 +27,7 @@ function galeryModal() {
                 contentId = Number(contentId[1]);
                 let found = state.media.find(elem => elem.id == contentId);
                 currentIndex = state.media.findIndex(elem => elem.id == found.id);
+                window.scroll(0, 0);
 
                 changeContent(found);
             })
@@ -62,7 +63,7 @@ function galeryModal() {
     }
 
     function changeContent(content) {
-        const mediaModel = mediaFactory(content);
+        const mediaModel = mediaFactory();
         let img = mediaModel.getContent(content);
         contentBox.appendChild(img);
         ligthDesc.textContent = content.title;

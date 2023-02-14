@@ -1,7 +1,9 @@
-function mediaFactory(data) {
-    const { id, photographerId, title, image, video, likes, date, price } = data;
+function mediaFactory() {
+    /* const { id, photographerId, title, image, video, likes, date, price } = data; */
 
-    function getMediaCardDOM() {
+    function getMediaCardDOM(data) {
+        const { id, photographerId, title, image, video, likes, date, price } = data;
+
         const card = document.createElement('article');
         card.setAttribute("aria-label", `#`)
         card.classList.add("flex-col");
@@ -39,8 +41,8 @@ function mediaFactory(data) {
     }
 
 
-    function getContent({ image, video, id, photographerId }) {
-
+    function getContent(data) {
+        let { image, video, id, photographerId } = data;
         let content;
         let path;
 
