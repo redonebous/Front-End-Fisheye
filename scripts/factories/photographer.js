@@ -28,8 +28,8 @@ function photographerFactory(data) {
     function getUserCardDOM({ id, name, city, country, price, portrait }) {
         const card = document.createElement('a');
         card.setAttribute("href", `/photographer.html?page=${id}`);
-        card.setAttribute("aria-label", `Page photographe de ${name}, venant de ${city} ${country}. Taux journalier de ${price} euros.`)
         card.classList.add("flex-col");
+        card.setAttribute("aria-label", `${name}`);
 
         const img = getPictureProfileDOM({ portrait, name });
 
@@ -90,7 +90,7 @@ function photographerFactory(data) {
         const picture = `assets/photographers/portrait/${portrait}`;
         const img = document.createElement('img');
         img.setAttribute("src", picture);
-        img.setAttribute("alt", `Photo de ${name}`);
+        img.setAttribute("alt", "");
 
         return (img);
     }

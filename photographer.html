@@ -18,7 +18,7 @@
       </section>
       <section class="media-galery">
         <label for="trier-galery"> Trier par
-          <select name="trier-galery" id="trier-galery">
+          <select name="trier-galery" id="trier-galery" aria-label="Order by">
             <option value="popularite">Popularité</option>
             <option value="date">Date</option>
             <option value="titre">Titre</option>
@@ -31,7 +31,6 @@
 			<div class="modal">
 				<header class="modal-header">
           <button class="sub-btn-close"><img src="assets/icons/close.svg" /></button>
-          <!-- <img class="sub-btn-close" src="assets/icons/close.svg" /> -->
         </header>
         <form action="post" class="formContact" novalidate>
           <label for="prenom">
@@ -56,11 +55,11 @@
         </form>
 			</div>
 		</div>
-    <div id="ligthbox">
-      <a href="#" class="btn-prev"></a>
+    <div id="ligthbox" aria-label="Image close up view">
+      <a href="#" class="btn-prev" aria-label="Previous image"></a>
       <article class="content-lightbox"></article>
-      <button class="close-ligthbox"><i class="fa-sharp fa-solid fa-xmark"></i></button>
-      <a href="#" class="btn-post"></a>
+      <button class="close-ligthbox" aria-label="Close dialog"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      <a href="#" class="btn-post" aria-label="Next image"></a>
     </div>
     <script type="module" src="/scripts/pages/photographer.js"></script>
   </body>

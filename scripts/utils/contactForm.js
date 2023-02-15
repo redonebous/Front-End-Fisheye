@@ -37,7 +37,7 @@ function contactModal() {
             errors = [];
             modal.style.display = "none";
             body.style.overflow = "unset";
-
+            button.focus();
         })
     }
 

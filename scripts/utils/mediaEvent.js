@@ -17,10 +17,10 @@ import { galeryModal } from "./galeryModal.js";
     - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) - OK
 
     - Sortir le getContactForm du JS et le coder en HTML - OK
-    - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
-
-    - Faire un tour de la maquette et ajouter les attributs d'accessibilités
     - Ajouter le focus sur les elem de la modal contact + Ligthbox - OK
+    
+    - Faire un tour de la maquette et ajouter les attributs d'accessibilités
+    - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
 */
 // EventListener in photographer's page
 

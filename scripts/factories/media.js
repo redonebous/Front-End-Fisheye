@@ -5,7 +5,6 @@ function mediaFactory() {
         const { id, photographerId, title, image, video, likes, date, price } = data;
 
         const card = document.createElement('article');
-        card.setAttribute("aria-label", `#`)
         card.classList.add("flex-col");
 
         const img = getContent(data)
@@ -14,6 +13,7 @@ function mediaFactory() {
         content.setAttribute("id", `content-${id}`);
         content.classList.add("media-content");
         content.setAttribute('href', "#");
+        content.setAttribute("aria-label", `${title}, close up view`)
         content.appendChild(img)
 
         const description = document.createElement('p');
@@ -24,6 +24,7 @@ function mediaFactory() {
 
         const like = document.createElement('button');
         like.setAttribute("id", `like-${id}`);
+        like.setAttribute("aria-label", "likes");
         like.classList.add("btn-like");
         const icon = document.createElement('i');
         icon.classList.add('fa-solid', 'fa-heart');
@@ -42,7 +43,7 @@ function mediaFactory() {
 
 
     function getContent(data) {
-        let { image, video, id, photographerId } = data;
+        let { image, video, id, photographerId, title } = data;
         let content;
         let path;
 
@@ -56,7 +57,7 @@ function mediaFactory() {
 
         }
         content.setAttribute("src", path);
-        content.setAttribute("alt", `#`);
+        content.setAttribute("alt", `${title}`);
         content.classList.add("content");
 
 

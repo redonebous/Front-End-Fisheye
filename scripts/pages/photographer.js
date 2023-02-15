@@ -40,7 +40,6 @@ async function displayData() {
     const infoUser = photographerModel.getUserAnalytics(state.photographer, state.totalLike);
     const titleModal = photographerModel.getHeaderContactForm(state.photographer);
 
-
     header.appendChild(userHeader);
     header.appendChild(profilePicture);
     modalHeader.appendChild(titleModal);
