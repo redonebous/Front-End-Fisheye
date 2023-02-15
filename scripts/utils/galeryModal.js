@@ -14,14 +14,21 @@ function galeryModal() {
 
     function setLightBox(state) {
         let contents = document.querySelectorAll(".media-content");
-        contents = Array.from(contents);
+        let cards = Array.from(contents);
 
         let currentIndex;
 
-        contents.map(elem => {
+        cards.map(elem => {
             elem.addEventListener('click', () => {
                 ligthbox.style.display = "flex";
                 body.style.overflow = "hidden";
+
+                btnPost.setAttribute("tabindex", 1);
+                btnPrev.setAttribute("tabindex", 2);
+                close.setAttribute("tabindex", 3);
+                btnPost.focus();
+
+
                 let contentId = elem.id;
                 contentId = contentId.split('-');
                 contentId = Number(contentId[1]);
@@ -38,6 +45,10 @@ function galeryModal() {
             body.style.overflow = "unset";
             contentBox.innerHTML = "";
 
+            btnPost.removeAttribute("tabindex");
+            btnPrev.removeAttribute("tabindex");
+            close.removeAttribute("tabindex");
+            contents[currentIndex].focus();
         });
 
         btnPost.addEventListener("click", () => {

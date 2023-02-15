@@ -29,12 +29,15 @@ function contactModal() {
             modal.style.display = "block";
             body.style.overflow = "hidden";
             window.scroll(0, 0);
+            close.focus();
+
         })
 
         close.addEventListener('click', () => {
             errors = [];
             modal.style.display = "none";
             body.style.overflow = "unset";
+
         })
     }
 

@@ -10,6 +10,7 @@ function photographerFactory(data) {
 
     function getGaleryPhotographers() {
         const wrapper = document.createElement('div');
+        console.log(userList);
         userList.forEach((photographer) => {
             const userWrapper = document.createElement('article');
             const userCardDOM = getUserCardDOM(photographer);
@@ -117,57 +118,13 @@ function photographerFactory(data) {
 
     function getHeaderContactForm({ name }) {
         const h2 = document.createElement('h2');
-        h2.innerHTML = `<h2>Contactez-moi<br>${name}</h2>`;
+        h2.innerHTML = `Contactez-moi<br>${name}`;
         return h2;
     }
 
-    function getContactForm() {
-
-        const form = document.createElement('form');
-        form.setAttribute('novalidate', '');
-        form.classList.add('formContact');
-
-        let contact = {
-            prenom: 'Prénom',
-            nom: 'Nom',
-            email: 'Email',
-            message: 'Votre Message'
-        };
-
-        for (let item in contact) {
-            let label = document.createElement('label');
-            label.textContent = contact[item];
-
-            if (item == 'message') {
-                let input = document.createElement('textarea');
-                input.setAttribute('name', item);
-                input.classList.add(`input-${item}`);
-                label.appendChild(input);
-            } else {
-                let input = document.createElement('input');
-                if (item != 'email') input.setAttribute('type', 'text');
-                if (item == 'email') input.setAttribute('type', 'email');
-                input.setAttribute('name', item);
-                input.classList.add(`input-${item}`);
-                label.appendChild(input);
-            }
-            form.appendChild(label);
-
-        }
-
-        const button = document.createElement('button');
-        button.innerText = 'Envoyer';
-        button.setAttribute('type', 'submit');
-        button.classList.add('contact_button', 'sub-btn');
-
-        form.appendChild(button);
-
-        return (form);
-
-    }
 
 
-    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM, getUserAnalytics, getContactForm, getHeaderContactForm, getGaleryPhotographers }
+    return { getUserCardDOM, getUserDescDOM, getUserHeaderDOM, getPictureProfileDOM, getUserAnalytics, getHeaderContactForm, getGaleryPhotographers }
 }
 
 export { photographerFactory };

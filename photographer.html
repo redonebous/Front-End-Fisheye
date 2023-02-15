@@ -30,8 +30,30 @@
     <div id="contact_modal" class="flex-centre">
 			<div class="modal">
 				<header class="modal-header">
-          <img class="sub-btn-close" src="assets/icons/close.svg" />
+          <button class="sub-btn-close"><img src="assets/icons/close.svg" /></button>
+          <!-- <img class="sub-btn-close" src="assets/icons/close.svg" /> -->
         </header>
+        <form action="post" class="formContact" novalidate>
+          <label for="prenom">
+            Prénom
+            <input type="text" name="prenom" class="input-prenom">
+          </label>
+          <label for="prenom">
+            Nom
+            <input type="text" name="nom" class="input-nom">
+          </label>
+          <label for="prenom">
+            Email
+            <input type="email" name="email" class="input-email">
+          </label>
+          <label for="prenom">
+            Votre Message
+            <textarea name="message" class="input-message"></textarea>
+          </label>
+          <button type="submit" class="contact_button sub-btn">
+            Envoyer
+          </button>
+        </form>
 			</div>
 		</div>
     <div id="ligthbox">

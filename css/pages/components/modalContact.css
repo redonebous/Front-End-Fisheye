@@ -25,12 +25,14 @@
   width: 100%;
   position: relative;
 }
-#contact_modal .modal header img {
+#contact_modal .modal header .sub-btn-close {
   cursor: pointer;
   position: absolute;
   top: 0px;
   right: 0px;
   transform: translateY(25%) scale(0.8);
+  background-color: transparent;
+  border: none;
 }
 #contact_modal .modal header h2 {
   font-size: 44px;

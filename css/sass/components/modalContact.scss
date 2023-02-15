@@ -27,12 +27,14 @@
             width: 100%;
             position: relative;
 
-            img {
+            .sub-btn-close {
                 cursor: pointer;
                 position: absolute;
                 top: 0px;
                 right: 0px;
                 transform: translateY(25%) scale(0.8);
+                background-color: transparent;
+                border: none;
             }
 
             h2 {

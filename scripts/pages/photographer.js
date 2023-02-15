@@ -39,13 +39,11 @@ async function displayData() {
     const profilePicture = photographerModel.getPictureProfileDOM(state.photographer);
     const infoUser = photographerModel.getUserAnalytics(state.photographer, state.totalLike);
     const titleModal = photographerModel.getHeaderContactForm(state.photographer);
-    const contactForm = photographerModel.getContactForm();
 
 
     header.appendChild(userHeader);
     header.appendChild(profilePicture);
     modalHeader.appendChild(titleModal);
-    modal.appendChild(contactForm);
 
     state.media.forEach((media) => {
         const galeryModel = mediaFactory();

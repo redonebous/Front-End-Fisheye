@@ -16,11 +16,11 @@ import { galeryModal } from "./galeryModal.js";
     - relancer getMediaCardDOM - OK
     - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) - OK
 
-    - Sortir le getContactForm du JS et le coder en HTML 
+    - Sortir le getContactForm du JS et le coder en HTML - OK
     - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
 
     - Faire un tour de la maquette et ajouter les attributs d'accessibilités
-    - Ajouter le focus sur les elem de la modal contact + Ligthbox
+    - Ajouter le focus sur les elem de la modal contact + Ligthbox - OK
 */
 // EventListener in photographer's page
 
@@ -80,9 +80,7 @@ function mediaEvent() {
                     break;
 
                 case 'titre':
-                    console.log(state.media);
                     state.media.sort((a, b) => a.title.localeCompare(b.title));
-                    console.log(state.media);
                     break;
 
                 case 'date':

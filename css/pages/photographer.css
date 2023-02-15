@@ -124,45 +124,4 @@ main {
   border-radius: 5px;
 }
 
-/* #ligthbox {
-    display: none;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(20, 20, 20, 0.2);
-
-    .content-lightbox {
-        display: flex;
-        height: 500px;
-        width: 500px;
-
-        img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-        }
-    }
-
-    .close-ligthbox {
-        position: absolute;
-        top: 15%;
-        left: 75%;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-
-        i {
-            font-size: 50px;
-            color: var(--color-prim);
-        }
-
-
-    }
-
-
-} */
-
 /*# sourceMappingURL=photographer.css.map */
