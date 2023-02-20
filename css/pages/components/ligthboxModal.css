@@ -1,53 +1,58 @@
 #ligthbox {
   display: none;
   position: absolute;
-  top: 0;
+  top: 0%;
   height: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
   background-color: white;
 }
-#ligthbox .content-lightbox {
+#ligthbox .light-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#ligthbox .light-wrapper .content-lightbox {
   display: flex;
   flex-direction: column;
   height: 600px;
   width: 600px;
 }
-#ligthbox .content-lightbox .content {
+#ligthbox .light-wrapper .content-lightbox .content {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-#ligthbox .close-ligthbox {
+#ligthbox .light-wrapper .close-ligthbox {
   position: absolute;
-  top: 10%;
-  left: 73%;
+  top: 8%;
+  right: 0%;
   cursor: pointer;
   border: none;
   background-color: transparent;
 }
-#ligthbox .close-ligthbox i {
+#ligthbox .light-wrapper .close-ligthbox i {
   font-size: 50px;
   color: var(--color-prim);
 }
-#ligthbox .btn-prev {
+#ligthbox .light-wrapper .btn-prev {
   margin-right: 20px;
 }
-#ligthbox .btn-prev::after {
+#ligthbox .light-wrapper .btn-prev::after {
   content: "<";
   font-size: 100px;
   color: var(--color-prim);
 }
-#ligthbox .btn-post {
+#ligthbox .light-wrapper .btn-post {
   margin-left: 20px;
 }
-#ligthbox .btn-post::after {
+#ligthbox .light-wrapper .btn-post::after {
   content: ">";
   font-size: 100px;
   color: var(--color-prim);
 }
-#ligthbox .ligth-desc {
+#ligthbox .light-wrapper .ligth-desc {
   color: var(--color-prim);
 }
 

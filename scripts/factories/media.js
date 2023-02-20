@@ -1,5 +1,4 @@
 function mediaFactory() {
-    /* const { id, photographerId, title, image, video, likes, date, price } = data; */
 
     function getMediaCardDOM(data) {
         const { id, photographerId, title, image, video, likes, date, price } = data;
@@ -47,7 +46,7 @@ function mediaFactory() {
         let content;
         let path;
 
-        if ('image' in data) {
+        if (image) {
             path = `assets/photographers/media/photographer_${photographerId}/${image}`
             content = document.createElement('img');
 

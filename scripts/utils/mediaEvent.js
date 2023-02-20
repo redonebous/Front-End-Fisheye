@@ -1,28 +1,8 @@
+// EventListener in photographer's page
+
 import { mediaFactory } from "../factories/media.js";
 import { galeryModal } from "./galeryModal.js";
 
-// LikeEvent + SortEvent
-
-/* 
-    - Mettre en place le style - OK
-    - Recuperer l'index avec findIndex - OK
-    - btn prev => findIndex - OK
-    - if (index == 0) revenir au dernier et inverement - OK
-
-    - AddEvent change sur select - OK
-    - switch avec les case popu / date / titre - OK
-    - sort dans chacun des case sur state.media - OK
-    - vider galery section avec innerHTML = "" - OK
-    - relancer getMediaCardDOM - OK
-    - setLigthBox + setLikeEvent => relancer tous les event (à mettre direct dans getMediaCardDom) - OK
-
-    - Sortir le getContactForm du JS et le coder en HTML - OK
-    - Ajouter le focus sur les elem de la modal contact + Ligthbox - OK
-    
-    - Faire un tour de la maquette et ajouter les attributs d'accessibilités
-    - Corriger les noms des images dans le dossier image pour correspondre au JSON pour Marcel
-*/
-// EventListener in photographer's page
 
 function mediaEvent() {
 
@@ -35,7 +15,7 @@ function mediaEvent() {
         let btnLike = document.querySelectorAll(".btn-like");
         btnLike = Array.from(btnLike);
         const likeCount = document.querySelector(".likeCount");
-        // recup l'id du media via l'id du btn + incrementer le totalLike et le likes + set le isLike 
+
         btnLike.map(elem => {
             elem.addEventListener('click', () => {
                 let likeId = elem.id;
@@ -52,7 +32,6 @@ function mediaEvent() {
                     state.totalLike = state.totalLike + 1;
                 }
 
-                // Modifier l'affichage du btn like + totalLike dans userInfo
                 const icon = document.createElement('i');
                 const icon2 = document.createElement('i');
 

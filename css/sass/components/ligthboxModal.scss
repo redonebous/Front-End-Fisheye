@@ -1,62 +1,69 @@
 #ligthbox {
     display: none;
     position: absolute;
-    top: 0;
+    top: 0%;
     height: 100%;
     width: 100%;
-    justify-content: center;
-    align-items: center;
     background-color: white;
 
-    .content-lightbox {
+    .light-wrapper {
         display: flex;
-        flex-direction: column;
-        height: 600px;
-        width: 600px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
 
-        .content {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
+        .content-lightbox {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            width: 600px;
+
+            .content {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
         }
-    }
 
-    .close-ligthbox {
-        position: absolute;
-        top: 10%;
-        left: 73%;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
+        .close-ligthbox {
+            position: absolute;
+            top: 8%;
+            right: 0%;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
 
-        i {
-            font-size: 50px;
+            i {
+                font-size: 50px;
+                color: var(--color-prim);
+            }
+        }
+
+        .btn-prev {
+            margin-right: 20px;
+
+            &::after {
+                content: "<";
+                font-size: 100px;
+                color: var(--color-prim);
+            }
+        }
+
+        .btn-post {
+            margin-left: 20px;
+
+            &::after {
+                content: ">";
+                font-size: 100px;
+                color: var(--color-prim);
+            }
+        }
+
+        .ligth-desc {
             color: var(--color-prim);
         }
     }
 
-    .btn-prev {
-        margin-right: 20px;
-
-        &::after {
-            content: "<";
-            font-size: 100px;
-            color: var(--color-prim);
-        }
-    }
-
-    .btn-post {
-        margin-left: 20px;
-
-        &::after {
-            content: ">";
-            font-size: 100px;
-            color: var(--color-prim);
-        }
-    }
-
-    .ligth-desc {
-        color: var(--color-prim);
-    }
 
 }

@@ -79,6 +79,10 @@ function galeryModal() {
         contentBox.appendChild(img);
         ligthDesc.textContent = content.title;
         contentBox.appendChild(ligthDesc);
+        console.log(img.tagName);
+        if (img.tagName == 'VIDEO') {
+            img.setAttribute('controls', 'true');
+        }
 
     }
 
