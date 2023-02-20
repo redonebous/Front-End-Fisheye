@@ -1,0 +1,43 @@
+:root {
+    --color-prim: #901C1C;
+    --color-sec: #D3573C;
+    --color-third: #DB8876;
+    --text-color-prim: var(--color-sec);
+    --text-color-sec: var(--color-prim);
+    --text-color-third: #525252;
+    --bckgd-color: #FAFAFA;
+
+    --margin-lat: 0% 5%;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-centre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
