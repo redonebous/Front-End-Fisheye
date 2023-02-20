@@ -27,7 +27,7 @@ function photographerFactory(data) {
 
     function getUserCardDOM({ id, name, city, country, price, portrait }) {
         const card = document.createElement('a');
-        card.setAttribute("href", `/photographer.html?page=${id}`);
+        card.setAttribute("href", `photographer.html?page=${id}`);
         card.classList.add("flex-col");
         card.setAttribute("aria-label", `${name}`);
 
