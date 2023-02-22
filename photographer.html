@@ -30,26 +30,26 @@
     <div id="contact_modal" class="flex-centre">
 			<div class="modal">
 				<header class="modal-header">
-          <button class="sub-btn-close"><img src="assets/icons/close.svg" /></button>
+          <button class="sub-btn-close" aria-label="Close contact form"><img src="assets/icons/close.svg" /></button>
         </header>
         <form action="post" class="formContact" novalidate>
-          <label for="prenom">
+          <label for="prenom" aria-label="First name">
             Prénom
             <input type="text" name="prenom" class="input-prenom">
           </label>
-          <label for="prenom">
+          <label for="nom" aria-label="Last name">
             Nom
             <input type="text" name="nom" class="input-nom">
           </label>
-          <label for="prenom">
+          <label for="email" aria-label="Email">
             Email
             <input type="email" name="email" class="input-email">
           </label>
-          <label for="prenom">
+          <label for="message" aria-label="Your message">
             Votre Message
             <textarea name="message" class="input-message"></textarea>
           </label>
-          <button type="submit" class="contact_button sub-btn">
+          <button type="submit" class="contact_button sub-btn" aria-label="Send">
             Envoyer
           </button>
         </form>

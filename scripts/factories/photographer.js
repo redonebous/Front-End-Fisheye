@@ -119,6 +119,7 @@ function photographerFactory(data) {
     function getHeaderContactForm({ name }) {
         const h2 = document.createElement('h2');
         h2.innerHTML = `Contactez-moi<br>${name}`;
+        h2.setAttribute("aria-label", `Contact me ${name}`);
         return h2;
     }
 
